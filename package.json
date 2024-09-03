@@ -1,7 +1,7 @@
 {
   "author": "Rob Parham",
   "bugs": {
-    "url": "https://github.com/pamblam/mysql-import/issues"
+    "url": "https://github.com/natalia-davis-fu3e/mysql-import-fu3e/issues"
   },
   "deprecated": false,
   "description": "Import .sql into a MySQL database with Node.",
@@ -17,7 +17,7 @@
   "engines": {
     "node": ">5.0.0"
   },
-  "homepage": "https://github.com/pamblam/mysql-import#readme",
+  "homepage": "https://github.com/natalia-davis-fu3e/mysql-import-fu3e#readme",
   "keywords": [
     "nodejs",
     "mysql",
@@ -27,19 +27,22 @@
   ],
   "license": "MIT",
   "main": "mysql-import.js",
-  "name": "mysql-import",
+  "name": "mysql-import-fu3e",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pamblam/mysql-import.git"
+    "url": "git+https://github.com/natalia-davis-fu3e/mysql-import-fu3e.git"
   },
   "scripts": {
     "build": "grunt",
-    "test": "node_modules/.bin/nyc --reporter=html --reporter=text node_modules/.bin/mocha ./test/test.js --timeout 15000",
-    "memory-test": "node_modules/.bin/mocha ./test/memory-stress-test.js --timeout 0",
+    "test": "nyc --reporter=html --reporter=text node_modules/.bin/mocha ./test/test.js --timeout 15000",
+    "memory-test": "mocha ./test/memory-stress-test.js --timeout 0",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "version": "5.1.1",
   "dependencies": {
     "mysql2": "^2.3.3"
+  },
+  "directories": {
+    "test": "test"
   }
 }
